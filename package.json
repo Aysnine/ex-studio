@@ -4,7 +4,9 @@
   "private": true,
   "scripts": {
     "start": "pm2 start ecosystem.config.js --env=production",
-    "dev": "pm2 start ecosystem.config.js"
+    "dev": "pm2 start ecosystem.config.js",
+    "build": "gulp build",
+    "watch": "gulp watch"
   },
   "dependencies": {
     "body-parser": "~1.18.2",
@@ -22,6 +24,7 @@
     "serve-favicon": "~2.4.5"
   },
   "devDependencies": {
+    "babel-core": "^6.26.0",
     "browser-sync": "^2.18.13",
     "del": "^3.0.0",
     "gulp": "^3.9.1",
