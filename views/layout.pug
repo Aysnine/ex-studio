@@ -1,7 +1,27 @@
+//- $site: app.locals.$site
+//- $page: res.locals.$page
+//- $data: res.locals.$data
+//- $dict: res.locals.$dict
+
+block global
+  include mixins/source.pug
+
+block test
+
 doctype html
 html
   head
-    title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
+    meta(charset='utf-8')
+    meta(name="viewport", content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0")
+    title= $page.title
+    block styles
+    block head-scripts
   body
-    block content
+    .wrap-top
+      .wrap-nav
+        block nav
+      .wrap-body
+        block body
+      .wrap-foot
+        block foot
+  block foot-scripts
