@@ -8,6 +8,7 @@ const cookieParser  = require('cookie-parser')
 const session = require('./lib/session')
 const lang    = require('./lib/lang')
 const site    = require('./lib/site')
+const map     = require('./routes/_map_')
 
 const app = express()
 
@@ -27,5 +28,8 @@ app.use(cookieParser())
 session.use(app)
 site.use(app)
 lang.use(app)
+
+// # Router bus
+map.use(app)
 
 module.exports = app
