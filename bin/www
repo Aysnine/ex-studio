@@ -88,5 +88,5 @@ function onListening() {
     : 'port ' + addr.port;
   debug('Listening on ' + bind);
 
-  console.log(`--- WEB listening at ${process.env.PORT} port`)
+  console.log(`--- Ready: WEB [port: ${process.env.PORT}]`)
 }
