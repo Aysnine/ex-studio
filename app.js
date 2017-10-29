@@ -6,6 +6,7 @@ const bodyParser    = require('body-parser')
 const cookieParser  = require('cookie-parser')
 
 const session = require('./lib/session')
+const graphql = require('./lib/graphql')
 const lang    = require('./lib/lang')
 const site    = require('./lib/site')
 const map     = require('./routes/_map_')
@@ -26,6 +27,7 @@ app.use(cookieParser())
 
 // # Load lib
 session.use(app)
+graphql.use(app, '/api', 'example')
 site.use(app)
 lang.use(app)
 
