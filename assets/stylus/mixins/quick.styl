@@ -1,0 +1,13 @@
+
+slower()
+  transition: arguments 0.2s cubic-bezier(0.800, 0.000, 0.200, 1.000)
+
+shader()
+  box-shadow: 0px 5px 10px 0px rgba(0,64,128,0.05)
+  
+shader-box(color = false)
+  border-radius: 8px
+  if (color==false)
+    box-shadow: 0px 10px 40px -10px rgba(0,64,128,0.2)
+  else
+    box-shadow: 0px 10px 40px -10px color

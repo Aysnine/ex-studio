@@ -4,6 +4,7 @@
 //- $dict: res.locals.$dict
 
 block global
+  - let $data = data || {}
   include mixins/source.pug
 
 block test
@@ -13,13 +14,14 @@ html
   head
     meta(charset='utf-8')
     meta(name="viewport", content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0")
-    title= $page.title
+    title= $data.title || $page.title
     block styles
     block head-scripts
   body
     .wrap-top
       .wrap-nav
         block nav
+          include partial/nav.pug
       .wrap-body
         block body
       .wrap-foot

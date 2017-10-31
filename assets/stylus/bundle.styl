@@ -1,0 +1,52 @@
+@import 'nib'
+@import 'mixins/util'
+@import 'mixins/quick'
+
+$size-base = 16px
+$size-lg-device = 64em
+$size-md-device = 52em
+
+$color-splash = #4DB6AC
+$color-link-def = #000
+$color-link-hl = #4DB6AC
+$color-body = #FFF
+
+@import '_reset'
+@import 'partial/nav'
+@import 'partial/splash'
+
+.wrap-copyright
+  // margin: 0 -1em
+  border-top: 1px solid #EEE
+  background: $color-body
+  p
+    color: #999
+    padding: 3em
+    text-align: center
+
+.wrap-sign
+  background: red
+
+.wrap-upline
+  padding: 2em 2em
+  background: #fff
+  height: 16em
+  @media (max-width: $size-md-device)
+    padding: 1em .5em
+
+.wrap-links
+  position: relative
+  padding: 2em .5em
+  .links
+    max-width: $size-lg-device - 12em
+    margin: auto
+    // background: red
+    text-align: center
+    .item
+      margin: 1em
+      padding: 1em
+      color: $color-link-def
+      text-decoration: none
+      &:hover, &:focus
+        slower(color)
+        color: $color-link-hl

@@ -1,6 +1,10 @@
 
 mixin css-link(name)
   link(rel='stylesheet' href='./stylesheets/'+name+'.css')
+mixin css-link-out(src)
+  link(rel='stylesheet' href=src)
 
 mixin js-link(name)
   script(type='text/javascript' src='./javascripts/'+name+'.js')
+mixin js-link-out(src)
+  script(type='text/javascript' src=src)

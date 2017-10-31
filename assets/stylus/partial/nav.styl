@@ -1,0 +1,63 @@
+
+.wrap-nav
+  background: #fff
+  overflow: hidden
+  height: 5em
+  shader()
+  .home-nav
+    background: @background
+    .wrap
+      // position: relative
+      margin: 0 auto
+      max-width: $size-lg-device
+    .left
+      float: left
+    .right
+      float: right
+    .pure-menu-link
+      height: 3em
+      padding: 1em
+      font-size: 1em
+      line-height: @height
+      color: $color-link-def
+      &:hover, &:focus
+        slower(color)
+        color: $color-link-hl
+        background: transparent
+    .pure-menu-heading
+      float: left
+    .pure-form
+      padding: 0 1em
+      height: 5em
+      line-height: @height
+      input
+        display: inline-block
+        height: 2em
+        line-height: @height
+        slower(border-color)
+        border: darken(#fff, 20%)
+        box-shadow: none
+        &:focus
+          border-color: $color-link-hl
+    .lang
+      position: relative
+      select
+        position: absolute
+        top: 0
+        bottom: 0
+        right: 0
+        left: 0
+        width: 100%
+        opacity: 0
+  i
+    padding: 0 .25em
+  @media (max-width: $size-md-device)
+    .home-nav
+      .right, .left
+        display: block
+        float: none
+        text-align: center
+        .pure-menu-link
+          padding: 0 .5em
+      .pure-menu-heading
+        float: none

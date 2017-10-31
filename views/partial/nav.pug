@@ -1,0 +1,35 @@
+
+.home-nav.pure-menu.pure-menu-horizontal.pure-menu-fixed
+  .wrap
+    a.pure-menu-heading.pure-menu-link(href='/')= $site.name
+
+    .pure-menu-list.left    
+      li.pure-menu-item
+        a.pure-menu-link(href='#')= $dict.about()
+      li.pure-menu-item
+        a.pure-menu-link(href='#')= $dict.help()
+
+    .pure-menu-list.right
+      li.pure-menu-item.lang
+        a.pure-menu-link
+          i.fa.fa-globe
+          span.mini= $dict.self()
+        select.hd-nav-lang
+          each dict, index in $site.lang.langs
+            option(value=index, selected=dict===$dict)
+              = dict.self()
+      li.pure-menu-item
+        a.pure-menu-link(href='user')
+          i.fa.fa-user
+          span
+            if $data.user
+              = $data.user.name.length<=12?$data.user.name:$data.user.name.substr(0, 12)+'...'
+            else
+              = $dict.signin_and_signon()
+
+    .pure-menu-list.right
+      form.pure-menu-item.pure-form
+        input.pure-input-rounded(type="text" placeholder=$dict.search()) 
+    
+
+      
